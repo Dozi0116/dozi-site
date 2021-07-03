@@ -1,26 +1,63 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app-view">
+    <CommonHeader/>
+    <router-view/>
+    <CommonFooter/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CommonHeader from '@/components/CommonHeader'
+import CommonFooter from '@/components/CommonFooter'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    CommonHeader,
+    CommonFooter,
+  },
 }
 </script>
 
-<style>
+
+<style lang="scss">
+@import "src/styles/global-style";
+
+html {
+  padding: 0;
+  margin: 0;
+  background-color: $color-cream;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    &:link,
+    &:hover,
+    &:visited,
+    &:active {
+      color: $color-navy;
+      text-decoration: none;
+    }
+  }
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: $color-black;
 }
+
+// #nav a {
+//   font-weight: bold;
+//   color: #2c3e50;
+// }
+
+// #nav a.router-link-exact-active {
+//   font-weight: bold;
+//   color: $color-navy;
+// }
 </style>
