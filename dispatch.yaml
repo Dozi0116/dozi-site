@@ -1,0 +1,5 @@
+dispatch:
+  - url: "*moji.dozi.dev/*"
+    service: mojijguesser
+  - url: "dozi.dev/*"
+    service: default
